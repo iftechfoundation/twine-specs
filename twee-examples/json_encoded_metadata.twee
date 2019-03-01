@@ -1,0 +1,27 @@
+:: StoryTitle
+JSON Encoded Metadata Example
+
+
+:: StoryData
+{
+	"ifid": "D674C58C-DEFA-4F70-B7A2-27742230C0FC",
+	"options": [
+		"debug"
+	],
+	"tagColors": {
+		"aa": "red",
+		"bb-cc": "orange",
+		"dd_ee": "yellow",
+		"ff.gg": "green",
+		"hh/ii": "blue",
+		"jj:kk": "purple",
+		"ll\"mm": "gray",
+		"pp\u0026qq": "gray"
+	},
+	"zoom": 0.25
+}
+
+
+:: Starting Passage [aa bb-cc dd_ee ff.gg hh/ii jj:kk ll"mm nn'oo pp&qq] {"position":"860,401","size":"200,100"}
+The starting passage of this example.
+
