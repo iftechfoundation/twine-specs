@@ -34,6 +34,32 @@ To prevent ambiguity during parsing, passage and tag names that include the opti
 - Encoding: The escapement mechanism is to prefix the escaped characters with a backslash (`\`).  To avoid ambiguity, non-escape backslashes must also be escaped via the same mechanism (`foo\bar` yields `foo\\bar`).
 - Decoding: To make decoding more robust, any escaped character within a chunk of encoded text yields the character minus the backslash (`\q` yields `q`).
 
+**Examples:**
+
+Minimal working example:
+
+```
+:: An overgrown path
+```
+
+With optional tags:
+
+```
+:: An overgrown path [forest spooky]
+```
+
+With optional metadata:
+
+```
+:: An overgrown path {"position":"600,400","size":"100,200"}
+```
+
+With both optional tags and metadata:
+
+```
+:: An overgrown path [forest spooky] {"position":"600,400","size":"100,200"}
+```
+
 #### Passage Name
 
 *[TME: Should we recommend avoiding link markup metacharacters here?]*
@@ -46,8 +72,8 @@ The optional tag block is a space separated list of tag names enclosed between o
 
 The optional metadata block is an inline JSON chunk.  The currently supported properties include:
 
-- `position`: (string) Comma separated passage tile positional coordinates (e.g., `600,400`).
-- `size`: (string) Comma separated passage tile width and height (e.g., `100,200`).
+- `position`: (string) Comma separated passage tile positional coordinates (e.g., `"600,400"`).
+- `size`: (string) Comma separated passage tile width and height (e.g., `"100,200"`).
 
 COMPILERS: It is recommended that the outcome of a decoding error should be to: emit a warning, discard the metadata, and continue processing of the passage.
 
@@ -67,9 +93,9 @@ NOTE: This is not an exhaustive list of special passage names.
 
 The project's name.  Maps to `<tw-storydata name>`.
 
-### `StoryMetadata`
+### `StoryData`
 
-The story metadata is a JSON chunk encapsulating various Twine 2 compatible details about your project.  The currently supported properties include:
+A JSON chunk encapsulating various Twine 2 compatible details about your project.  The currently supported properties include:
 
 - `ifdb`: (string) Required.  Maps to `<tw-storydata ifid>`.
 - `format`: (string) Optional.  Maps to `<tw-storydata format>`.
@@ -86,7 +112,7 @@ COMPILERS: It is recommended that the outcome of a decoding error should be to: 
 **Example:**
 
 ```
-:: StoryMetadata
+:: StoryData
 {
 	"ifid": "D674C58C-DEFA-4F70-B7A2-27742230C0FC",
 	"format": "SugarCube",
