@@ -42,13 +42,13 @@ Minimal working example:
 :: An overgrown path
 ```
 
-With optional tags:
+With only optional tags:
 
 ```
 :: An overgrown path [forest spooky]
 ```
 
-With optional metadata:
+With only optional metadata:
 
 ```
 :: An overgrown path {"position":"600,400","size":"100,200"}
