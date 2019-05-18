@@ -62,11 +62,11 @@ With both optional tags and metadata:
 
 #### Passage Name
 
-*[TME: Should we recommend avoiding link markup metacharacters here?]*
+It is recommended that passage names should not contain link markup metacharacters like `[`, `]`, or `|`.
 
 #### Tag Block
 
-The optional tag block is a space separated list of tag names enclosed between opening and closing square brackets (i.e. `[`, `]`).
+The optional tag block is a space separated list of tag names enclosed between opening and closing square brackets (i.e. `[`, `]`). Tags themselves must not contain spaces.
 
 #### Metadata Block
 
@@ -154,4 +154,3 @@ It is recommended that any software accepting Twee notation test for and attempt
 For all sections using the word **must**, software authors are required to implement and follow the requirements therein.
 
 For all sections using the word **recommended**, software authors are encouraged, but not required, to implement and follow the guidelines therein.
-
