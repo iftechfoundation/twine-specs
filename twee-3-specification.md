@@ -97,7 +97,7 @@ The project's name.  Maps to `<tw-storydata name>`.
 
 A JSON chunk encapsulating various Twine 2 compatible details about your project.  The currently supported properties include:
 
-- `ifdb`: (string) Required.  Maps to `<tw-storydata ifid>`.
+- `ifid`: (string) Required.  Maps to `<tw-storydata ifid>`.
 - `format`: (string) Optional.  Maps to `<tw-storydata format>`.
 - `format-version`: (string) Optional.  Maps to `<tw-storydata format-version>`.
 - `start`: (string) Optional.  Maps to `<tw-passagedata name>` of the node whose `pid` matches `<tw-storydata startnode>`.
