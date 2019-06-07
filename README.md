@@ -2,4 +2,4 @@
 
 This repository houses the documentation for various Twine related specifications.
 
-*(let's fill in the blanks)*
+* [Twee3 Specification](https://github.com/iftechfoundation/twine-specs/blob/master/twee-3-specification.md)
