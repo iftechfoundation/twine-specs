@@ -1,4 +1,4 @@
-# Twee 3 Specification (v1.0.0, *Draft*)
+# Twee 3 Specification (v3.0.0)
 
 ## Introduction
 
