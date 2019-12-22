@@ -63,7 +63,7 @@ Each passage is represented as a `<tw-passagedata>` element with its metadata st
 
 Passage content is stored within a text node of the `<tw-passagedata>` element itself; all `&`, `<`, `>`, `"`, and `'` characters should be escaped into their corresponding HTML entities.
 
-`<tw-passagedata>` should have no other child elements than a single text node.
+`<tw-passagedata>` should contain no child nodes other than the single text node for its content.
 
 **Example:**
 ```
