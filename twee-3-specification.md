@@ -29,10 +29,10 @@ Each header must be a single line and is composed of the following components (i
 
 NOTE: Each component after the start token may be preceded by one or more spaces for readability.
 
-To prevent ambiguity during parsing, passage and tag names that include the optional tag and metadata block opening and closing metacharacters (i.e. `[`, `]`, `{`, `}`) must escape them.
+To prevent ambiguity during parsing, passage and tag names that include the optional tag and metadata block opening and closing metacharacters (i.e. `[`, `]`, `{`, `}`) must escape them.  The escapement mechanism is to prefix the escaped characters with a backslash (`\`).
 
-- Encoding: The escapement mechanism is to prefix the escaped characters with a backslash (`\`).  To avoid ambiguity, non-escape backslashes must also be escaped via the same mechanism (`foo\bar` yields `foo\\bar`).
-- Decoding: To make decoding more robust, any escaped character within a chunk of encoded text yields the character minus the backslash (`\q` yields `q`).
+- Encoding: To avoid ambiguity, non-escape backslashes must also be escaped via the same mechanism (i.e. `foo\bar` must become `foo\\bar`).
+- Decoding: To make decoding more robust, any escaped character within a chunk of encoded text must yield the character minus the backslash (i.e. `\q` must yield `q`).
 
 **Examples:**
 
