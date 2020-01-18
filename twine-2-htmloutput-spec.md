@@ -61,9 +61,7 @@ Each passage is represented as a `<tw-passagedata>` element with its metadata st
 * position: (string) Optional. Comma-separated X and Y position of the upper-left of the passage when viewed within the Twine 2 editor.
 * size: (string) Optional. Comma-separated width and height of the passage when viewed within the Twine 2 editor.
 
-Passage content is stored within the inner text of the `<tw-passagedata>` element itself; all `&`, `<`, `>`, `"`, and `'` characters should be escaped into their corresponding HTML entities.
-
-`<tw-passagedata>` should not have child elements.
+Passage content is stored within the <tw-passagedata> element itself as a single text node and must contain no other child nodes; all &, <, >, ", and ' characters should be escaped into their corresponding HTML entities.
 
 **Example:**
 ```
