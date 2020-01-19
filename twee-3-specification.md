@@ -1,4 +1,4 @@
-# Twee 3 Specification (v3.0.0)
+# Twee 3 Specification (v3.0.1)
 
 ## Introduction
 
@@ -29,10 +29,10 @@ Each header must be a single line and is composed of the following components (i
 
 NOTE: Each component after the start token may be preceded by one or more spaces for readability.
 
-To prevent ambiguity during parsing, passage and tag names that include the optional tag and metadata block opening and closing metacharacters (i.e. `[`, `]`, `{`, `}`) must escape them.
+To prevent ambiguity during parsing, passage and tag names that include the optional tag and metadata block opening and closing metacharacters (i.e. `[`, `]`, `{`, `}`) must escape them.  The escapement mechanism is to prefix the escaped characters with a backslash (`\`).
 
-- Encoding: The escapement mechanism is to prefix the escaped characters with a backslash (`\`).  To avoid ambiguity, non-escape backslashes must also be escaped via the same mechanism (`foo\bar` yields `foo\\bar`).
-- Decoding: To make decoding more robust, any escaped character within a chunk of encoded text yields the character minus the backslash (`\q` yields `q`).
+- Encoding: To avoid ambiguity, non-escape backslashes must also be escaped via the same mechanism (i.e. `foo\bar` must become `foo\\bar`).
+- Decoding: To make decoding more robust, any escaped character within a chunk of encoded text must yield the character minus the backslash (i.e. `\q` must yield `q`).
 
 **Examples:**
 
@@ -104,10 +104,11 @@ A JSON chunk encapsulating various Twine 2 compatible details about your project
 - `tag-colors`: (object of tag(string):color(string) pairs) Optional.  Pairs map to `<tw-tag>` nodes as `<tw-tag name>`:`<tw-tag color>`.
 - `zoom`: (decimal) Optional.  Maps to `<tw-storydata zoom>`.
 
+COMPILERS:
 
-COMPILERS: For readability, it is recommended that the JSON be pretty-printed (line-broken and indented).
-
-COMPILERS: It is recommended that the outcome of a decoding error should be to: emit a warning, discard the metadata, and continue processing the file.
+- An IFID (Interactive Fiction IDentifier) uniquely identifies compiled projects—see [The Treaty of Babel](https://babel.ifarchive.org/).  Twine 2 uses v4 (random) [UUIDs](https://en.wikipedia.org/wiki/Universally_unique_identifier), using only capital letters, and Twee 3 compilers must follow suit to ensure maximum compatibility.
+- For readability, it is recommended that the JSON be pretty-printed (line-broken and indented).
+- It is recommended that the outcome of a decoding error should be to: emit a warning, discard the metadata, and continue processing the file.
 
 **Example:**
 
