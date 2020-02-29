@@ -1,4 +1,4 @@
-# Twine 2 Story Formats (Draft)
+# Twine 2 Story Formats (v1.0.0)
 
 Story formats are JavaScript files used by Twine or other compiling tools to convert story and passage data into an HTML file.  The story and passage data is usually stored internally by Twine 2, but can also be stored in a Twee3 text file.
 

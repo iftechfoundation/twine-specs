@@ -1,4 +1,4 @@
-# Twine 2 HTML Output (Draft)
+# Twine 2 HTML Output (v1.0.0)
 
 Twine 2 stores its data within HTML elements.
 
