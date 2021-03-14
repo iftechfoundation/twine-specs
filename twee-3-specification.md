@@ -1,4 +1,4 @@
-# Twee 3 Specification (v3.0.1)
+# Twee 3 Specification (v3.0.2)
 
 ## Introduction
 
@@ -38,31 +38,33 @@ To prevent ambiguity during parsing, passage and tag names that include the opti
 
 Minimal working example:
 
-```
+```Twee
 :: An overgrown path
 ```
 
 With only optional tags:
 
-```
+```Twee
 :: An overgrown path [forest spooky]
 ```
 
 With only optional metadata:
 
-```
+```Twee
 :: An overgrown path {"position":"600,400","size":"100,200"}
 ```
 
 With both optional tags and metadata:
 
-```
+```Twee
 :: An overgrown path [forest spooky] {"position":"600,400","size":"100,200"}
 ```
 
 #### Passage Name
 
-It is recommended that passage names should not contain link markup metacharacters like `[`, `]`, or `|`.
+It is recommended that passage names should be unique within a story and not contain link markup metacharacters like `[`, `]`, or `|`.
+
+COMPILERS: It is recommended that the outcome of a detecting multiple passages with the same name should at least be to emit a warning.
 
 #### Tag Block
 
@@ -112,19 +114,19 @@ COMPILERS:
 
 **Example:**
 
-```
+```Twee
 :: StoryData
 {
-	"ifid": "D674C58C-DEFA-4F70-B7A2-27742230C0FC",
-	"format": "SugarCube",
-	"format-version": "2.28.2",
-	"start": "My Starting Passage",
-	"tag-colors": {
-		"bar": "green",
-		"foo": "red",
-		"qaz": "blue"
-	},
-	"zoom": 0.25
+   "ifid": "D674C58C-DEFA-4F70-B7A2-27742230C0FC",
+   "format": "SugarCube",
+   "format-version": "2.28.2",
+   "start": "My Starting Passage",
+   "tag-colors": {
+     "bar": "green",
+     "foo": "red",
+     "qaz": "blue"
+   },
+   "zoom": 0.25
 }
 ```
 
