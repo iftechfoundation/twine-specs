@@ -1,4 +1,4 @@
-# Twee 3 Specification (v3.0.2)
+# Twee 3 Specification (v3.0.3)
 
 ## Introduction
 
@@ -27,7 +27,9 @@ Each header must be a single line and is composed of the following components (i
 3. Optional tag block that must directly follow the passage name.
 4. Optional metadata block, an inline JSON chunk, that must directly follow either the tag block or, if the tag block is omitted, the passage name.
 
-NOTE: Each component after the start token may be preceded by one or more spaces for readability.
+NOTE: To maintain compatibility with older versions of Twee, it is recommended compilers recognize passage headers using no, one, or multiple spaces between components after the start token.
+
+COMPILERS: It is recommended to generate one or more spaces between components when de-compiling.
 
 To prevent ambiguity during parsing, passage and tag names that include the optional tag and metadata block opening and closing metacharacters (i.e. `[`, `]`, `{`, `}`) must escape them.  The escapement mechanism is to prefix the escaped characters with a backslash (`\`).
 
@@ -84,6 +86,8 @@ COMPILERS: It is recommended that the outcome of a decoding error should be to: 
 The content section begins on the next line after the passage header and continues until the next passage header or the end of file.
 
 COMPILERS: Trailing blank lines must be ignored/omitted.
+
+COMPILERS: A warning may be emitted if common passage header-like patterns are detected in content.
 
 ## Special Passages
 
@@ -157,3 +161,5 @@ It is recommended that any software accepting Twee notation test for and attempt
 For all sections using the word **must**, software authors are required to implement and follow the requirements therein.
 
 For all sections using the word **recommended**, software authors are encouraged, but not required, to implement and follow the guidelines therein.
+
+For all sections using the word **may**, software authors are not required to implement the requirements, but they should be considered best practices.
