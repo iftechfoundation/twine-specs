@@ -35,6 +35,7 @@ Story metadata is stored as attributes on the `<tw-storydata>` element.
 * format: (string) Optional. The story format used to create the story.
 * format-version: (string) Optional. The version of the story format used to create the story.
 * startnode: (string) Optional. The PID matching a `<tw-passagedata>` element whose content should be displayed first.
+* tags: (string) Optional. A list of tags assigned to the story by its author, with spaces separating them.
 * zoom: (string) Optional. The decimal level of zoom (i.e. 1.0 is 100% and 1.2 would be 120% zoom level).
 * creator: (string) Optional. The name of program used to create the file.
 * creator-version: (string) Optional. The version of the program used to create the file.
