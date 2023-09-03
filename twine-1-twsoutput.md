@@ -64,8 +64,26 @@ Each passage object has three properties:
 * `passage`: (object) data of the passage:
   * `text`: (string) content of the passage.
   * `title`: (string) title of the passage.
-  * `modified`:  (function) Function returning a date stamp. (Translated as empty object in JSON.)
-  * `created`: (function) Function returning a date stamp. (Translated as empty object in JSON.)
+    * `modified`:  (function) Function returning an array containing an array of a Python date stamp:
+    * `[0]` is year.
+    * `[1]` is month of year.
+    * `[2]` is day (of month).
+    * `[3]` is hour of day (24-hour format).
+    * `[4]` is minute of hour.
+    * `[5]` is second.
+    * `[6]` is milliseconds of second.
+    * `[7]` is day of year (of 365 days).
+    * `[8]` is weekday (1 for Sunday up to 7 for Saturday).
+  * `created`: (function) Function returning an array containing an array of a Python date stamp:
+    * `[0]` is year.
+    * `[1]` is month of year.
+    * `[2]` is day (of month).
+    * `[3]` is hour of day (24-hour format).
+    * `[4]` is minute of hour.
+    * `[5]` is second of minute.
+    * `[6]` is milliseconds of second.
+    * `[7]` is day of year (of 365 days).
+    * `[8]` is weekday (1 for Sunday up to 7 for Saturday).
   * `tags`: (array) Array of tag values (each a string).
 
 **Example**
