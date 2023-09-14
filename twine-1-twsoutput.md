@@ -64,26 +64,8 @@ Each passage object has three properties:
 * `passage`: (object) data of the passage:
   * `text`: (string) content of the passage.
   * `title`: (string) title of the passage.
-    * `modified`:  (function) Function returning an array containing an array of a Python date stamp:
-    * `[0]` is year.
-    * `[1]` is month of year.
-    * `[2]` is day (of month).
-    * `[3]` is hour of day (24-hour format).
-    * `[4]` is minute of hour.
-    * `[5]` is second.
-    * `[6]` is milliseconds of second.
-    * `[7]` is day of year (of 365 days).
-    * `[8]` is weekday (1 for Sunday up to 7 for Saturday).
-  * `created`: (function) Function returning an array containing an array of a Python date stamp:
-    * `[0]` is year.
-    * `[1]` is month of year.
-    * `[2]` is day (of month).
-    * `[3]` is hour of day (24-hour format).
-    * `[4]` is minute of hour.
-    * `[5]` is second of minute.
-    * `[6]` is milliseconds of second.
-    * `[7]` is day of year (of 365 days).
-    * `[8]` is weekday (1 for Sunday up to 7 for Saturday).
+  * `modified`: (object) Python date structure. (See Date Structure section.)
+  * `created`: (object) Python date structure. (See Date Structure section.)
   * `tags`: (array) Array of tag values (each a string).
 
 **Example**
@@ -117,3 +99,38 @@ Each passage object has three properties:
     }
 }
 ```
+
+#### Date Structure
+
+In Twine 1, datestamp data is encoded using [`time.struct_time`](https://docs.python.org/3/library/time.html#time.struct_time). During parsing in JavaScript, this structure is often converted into a function and, in JSON, is represented as an empty object.
+
+Depending on the conversion library or software tool used to read the data, this may result in an array:
+
+**Example**
+```json
+{
+    [
+        2023,
+        9,
+        3,
+        14,
+        38,
+        52,
+        6,
+        246,
+        1
+    ]
+}
+```
+
+In order, the array entries can be mapped back to the attributes of the original Python time structure:
+
+- Year
+- Month (range [1, 12])
+- Day of Month (range [1, 31])
+- Hour (range [0, 23])
+- Minute (range [0, 59])
+- Second (range [0, 61])
+- Day of Week (range [0, 6], Monday is 0)
+- Day of Year (range [1, 366])
+- Daylight Saving Time Offset (0, 1 or -1)
