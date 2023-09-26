@@ -4,8 +4,6 @@ For exporting a library, Twine 2 produces an archive format.
 
 A library is defined as a collection of one or more stories with each following the [Twine 2 HTML Output Specification](https://github.com/iftechfoundation/twine-specs/blob/master/twine-2-htmloutput-spec.md).
 
-An archive file is a HTML file with two newline characters (`\n\n`) following the `<tw-storydata>` element encoding of each story:
-
 **Example:**
 
 ```html
