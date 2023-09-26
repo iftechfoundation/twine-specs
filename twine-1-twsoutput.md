@@ -2,7 +2,7 @@
 
 **Note:** This is historical documentation on a version of Twine no longer maintained. It is provided to help current and future developers understand and potentially parse files created with Twine 1 or compatible Twee compilers.
 
-In Twine 1, the archive TWS format uses a [byte-stream Python "pickle" serialization](https://docs.python.org/3/library/pickle.html). Story metadata and passages are encoded as properties of a single Python object.
+In Twine 1, the archive TWS format was generated from [byte-stream Python "pickle" serialization](https://docs.python.org/2/library/pickle.html) in Python 2. Story metadata and passages are encoded as properties of a single Python object.
 
 **Note**: Although there is no formal specification of the pickle serialization, there are multiple protocols (versions) documented. For specific information on each protocol, consult [PEP 307](https://peps.python.org/pep-0307/), [PEP 3154](https://peps.python.org/pep-3154/), and [PEP 574](https://peps.python.org/pep-0574/). It is strongly recommended to use an existing library or software tool to process the byte-stream rather than attempt to process binary data directly.
 
@@ -102,7 +102,7 @@ Each passage object has three properties:
 
 #### Date Structure
 
-In Twine 1, datestamp data is encoded using [`time.struct_time`](https://docs.python.org/3/library/time.html#time.struct_time). During parsing in JavaScript, this structure is often converted into a function and, in JSON, is represented as an empty object.
+In Twine 1, datestamp data is encoded using [`time.struct_time`](https://docs.python.org/2/library/time.html#time.struct_time) in Python 2. During parsing in JavaScript, this structure is often converted into a function and, in JSON, is represented as an empty object.
 
 Depending on the conversion library or software tool used to read the data, this may result in an array:
 
