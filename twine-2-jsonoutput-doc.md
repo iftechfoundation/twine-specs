@@ -28,12 +28,13 @@ To maintain close compatibility with the existing formats of [Twine 2 HTML](http
   "zoom": 0.25,
   "passages": [
     {
-      "name": "My Staring Passage",
+      "name": "My Starting Passage",
       "tags": ["tag1", "tag2"],
       "metadata": {
         "position":"600,400",
         "size":"100,200"
-      }
+      },
+      "content": "Double-click this passage to edit it."
     }
   ]
 }
@@ -48,14 +49,16 @@ Passage properties mirror those found in Twee 3 notation:
 - `metadata`: (object of name(string):value(string) pairs). Optional. As in Twee 3 notation, a passage can contain multiple name-value pairs. For compatibility with Twine 2, the currently supported properties include:
   - `position`: (string) Comma separated passage tile positional coordinates (e.g., "600,400").
   - `size`: (string) Comma separated passage tile width and height (e.g., "100,200").
+- `content`: (string) Required. Content of the passage.
 
 ```json
 {
-  "name": "My Staring Passage",
+  "name": "My Starting Passage",
   "tags": ["tag1", "tag2"],
   "metadata": {
     "position":"600,400",
     "size":"100,200"
-  }
+  },
+  "content": "Double-click this passage to edit it."
 }
 ```
