@@ -2,11 +2,11 @@
 
 This specification defines a series of properties for encoding story and passage data compatible with Twine 2 and related tools using [JavaScript Object Notation (JSON)](https://www.json.org/json-en.html).
 
-## Story Encoding
+## Story Data Encoding
 
-To maintain close compatibility with the existing formats of [Twine 2 HTML](https://github.com/iftechfoundation/twine-specs/blob/master/twine-2-htmloutput-spec.md) and [Twee 3 notation](https://github.com/iftechfoundation/twine-specs/blob/master/twee-3-specification.md), story properties encoded in JSON mirror those found in the [`StoryData` passage in Twee 3 notation](https://github.com/iftechfoundation/twine-specs/blob/master/twee-3-specification.md#storydata):
+To maintain close compatibility with the existing output formats of [Twine 2 HTML](https://github.com/iftechfoundation/twine-specs/blob/master/twine-2-htmloutput-spec.md) and [Twee 3 notation](https://github.com/iftechfoundation/twine-specs/blob/master/twee-3-specification.md), story properties encoded in JSON mirror those found in the [`StoryData` passage in Twee 3 notation](https://github.com/iftechfoundation/twine-specs/blob/master/twee-3-specification.md#storydata):
 
-- `ifid`: (string) Required. Maps to `<tw-storydata ifid>`.
+- `ifid`: (string) Optional. Maps to `<tw-storydata ifid>`.
 - `format`: (string) Optional. Maps to `<tw-storydata format>`.
 - `format-version`: (string) Optional. Maps to `<tw-storydata format-version>`.
 - `start`: (string) Optional. Maps to `<tw-passagedata name>` of the node whose pid matches `<tw-storydata startnode>`.
@@ -34,13 +34,13 @@ To maintain close compatibility with the existing formats of [Twine 2 HTML](http
         "position":"600,400",
         "size":"100,200"
       },
-      "content": "Double-click this passage to edit it."
+      "text": "Double-click this passage to edit it."
     }
   ]
 }
 ```
 
-## Passage Encoding
+## Passage Data Encoding
 
 Passage properties mirror those found in Twee 3 notation:
 
@@ -49,7 +49,7 @@ Passage properties mirror those found in Twee 3 notation:
 - `metadata`: (object of name(string):value(string) pairs). Optional. As in Twee 3 notation, a passage can contain multiple name-value pairs. For compatibility with Twine 2, the currently supported properties include:
   - `position`: (string) Comma separated passage tile positional coordinates (e.g., "600,400").
   - `size`: (string) Comma separated passage tile width and height (e.g., "100,200").
-- `content`: (string) Required. Content of the passage.
+- `text`: (string) Required. Content of the passage.
 
 ```json
 {
@@ -59,6 +59,12 @@ Passage properties mirror those found in Twee 3 notation:
     "position":"600,400",
     "size":"100,200"
   },
-  "content": "Double-click this passage to edit it."
+  "text": "Double-click this passage to edit it."
 }
 ```
+
+## Optional Partial Story Encoding
+
+Using JSON representation, a story can be encoded in whole or in part. When directly converting from one output format to another, story metadata is suggested but optional.
+
+Because `passages` is the only required story metadata property, a selection of content, named "partial story encoding," is possible to represent a subset of passages and story metadata. Depending on the story format, this allows for representing in JSON additional story content, CSS, or JavaScript for including as part of a larger story compilation process.
