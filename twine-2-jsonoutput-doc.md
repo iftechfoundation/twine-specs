@@ -15,6 +15,8 @@ To maintain compatibility with the existing output formats of [Twine 2 HTML](htt
 - `zoom`: (decimal) Optional. Maps to `<tw-storydata zoom>`.
 - `creator`: (string) Optional. The name of program used to create the file. Maps to `<tw-storydata creator>`.
 - `creator-version`: (string) Optional. The version of the program used to create the file. Maps to `<tw-storydata creator-version>`.
+- `style`: (string) Optional. Story Stylesheet content. Maps to `<style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style>`.
+- `script`: (string) Optional. Story JavaScript content. Maps to `<script role="script" id="twine-user-script" type="text/twine-javascript"></script>`.
 - `passages`: (array of objects) Required. Array of one or more passage objects encoded in JSON.
 
 ```json
@@ -32,6 +34,8 @@ To maintain compatibility with the existing output formats of [Twine 2 HTML](htt
   "zoom": 0.25,
   "creator": "Twine",
   "creator-version": "2.8",
+  "style": "",
+  "script": "",
   "passages": [
     {
       "name": "My Starting Passage",
