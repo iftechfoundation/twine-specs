@@ -7,3 +7,4 @@ This repository houses the documentation for various Twine-related specification
 * [Twine 2 Story Formats Specification](https://github.com/iftechfoundation/twine-specs/blob/master/twine-2-storyformats-spec.md)
 * [Twine 1 HTML Output Documentation](https://github.com/iftechfoundation/twine-specs/blob/master/twine-1-htmloutput-doc.md)
 * [Twine 2 Archive Output Specification](https://github.com/iftechfoundation/twine-specs/blob/master/twine-2-archive-spec.md)
+* [Twine 2 JSON Specification](https://github.com/iftechfoundation/twine-specs/blob/master/twine-2-jsonoutput-doc.md)
