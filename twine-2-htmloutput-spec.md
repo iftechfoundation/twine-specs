@@ -1,4 +1,4 @@
-# Twine 2 HTML Output (v1.0.1)
+# Twine 2 HTML Output (v1.0.2)
 
 Twine 2 stores its data within HTML elements.
 
@@ -9,12 +9,10 @@ The root of a Twine 2 story is the `<tw-storydata>` element with attributes enco
 ```html
 <tw-storydata>
   <style
-    role="stylesheet"
     id="twine-user-stylesheet"
     type="text/twine-css">
   </style>
   <script
-    role="script"
     id="twine-user-script"
     type="text/twine-javascript">
   </script>
@@ -83,7 +81,7 @@ Some content
 
 ## Story JavaScript
 
-Any JavaScript code saved from the Story JavaScript window of the Story menu in Twine 2 is kept within a single `<script>` element with its `type` attribute set to `text/twine-javascript`.
+Any JavaScript code saved from the Story JavaScript window of the Story menu in Twine 2 is kept within a single `<script>` element with its `type` attribute set to `text/twine-javascript`. Optionally, the `id` attribute can be set to the value `twine-user-script` to help identify the element.
 
 This will be executed upon story start.
 
@@ -95,7 +93,7 @@ This will be executed upon story start.
 
 ## Story Stylesheet
 
-Any CSS rules saved from the Story Stylesheet window from the Story menu in Twine 2 are kept within a single `<style>` element with its `type` attribute set to `text/twine-css`.
+Any CSS rules saved from the Story Stylesheet window from the Story menu in Twine 2 are kept within a single `<style>` element with its `type` attribute set to `text/twine-css`. Optionally, the `id` attribute can be set to the value `twine-user-stylesheet` to help identify the element.
 
 Any CSS rules found within the element will applied to the document upon story start.
 
