@@ -81,7 +81,7 @@ Some content
 
 ## Story JavaScript
 
-Any JavaScript code saved from the Story JavaScript window of the Story menu in Twine 2 is kept within a single `<script>` element with its `type` attribute set to `text/twine-javascript`. Optionally, the `id` attribute can be set to the value `twine-user-script` to help identify the element.
+Any JavaScript code saved from the Story JavaScript window of the Story menu in Twine 2 is kept within a single `<script>` element with its `type` attribute set to `text/twine-javascript`. Historically, the `id` attribute was set to the value `twine-user-script` and `role` attribute set to the value `script` to help identify the element.
 
 This will be executed upon story start.
 
@@ -93,7 +93,7 @@ This will be executed upon story start.
 
 ## Story Stylesheet
 
-Any CSS rules saved from the Story Stylesheet window from the Story menu in Twine 2 are kept within a single `<style>` element with its `type` attribute set to `text/twine-css`. Optionally, the `id` attribute can be set to the value `twine-user-stylesheet` to help identify the element.
+Any CSS rules saved from the Story Stylesheet window from the Story menu in Twine 2 are kept within a single `<style>` element with its `type` attribute set to `text/twine-css`. Historically, the `id` attribute was set to the value `twine-user-stylesheet` and the `role` attribute set to the value `stylesheet` to help identify the element.
 
 Any CSS rules found within the element will applied to the document upon story start.
 
